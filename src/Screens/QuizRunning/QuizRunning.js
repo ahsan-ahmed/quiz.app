@@ -19,7 +19,7 @@ class QuizRunning extends Component{
       localStorage.setItem("currentQuestion",0);
     }
     
-    this.state={selectedQuiz,currentQuestion:JSON.parse(localStorage.getItem("currentQuestion")),correct:0,inCorrect:0,value:"",flag:true}
+    this.state={selectedQuiz,currentQuestion:JSON.parse(localStorage.getItem("currentQuestion")),correct:0,inCorrect:0,value:""}
     this.onChange=this.onChange.bind(this);
     this.onButtonPress=this.onButtonPress.bind(this);
   }
@@ -41,6 +41,7 @@ class QuizRunning extends Component{
     else if(currentQuestion===totalLength){
       localStorage.setItem("isSpecificQuizDetailShow",true);
       localStorage.setItem("quizKey",false);
+      localStorage.setItem("currentQuestion",0);
       localStorage.setItem("SpecificQuizDetail",JSON.stringify({selectedQuiz,"score":correct}))
       this.props.quizOver();
       this.props.takeScore();
@@ -70,10 +71,6 @@ class QuizRunning extends Component{
 
   quizDisplay(){
     const {selectedQuiz,currentQuestion,correct,inCorrect}=this.state;
-    let currentQuestionDB=JSON.parse(localStorage.getItem("currentQuestion"));
-    if(currentQuestionDB===currentQuestion){
-     this.setState({ currentQuestion:currentQuestionDB});
-    }
     console.log("--->",selectedQuiz,"correct->>",correct,"inCorrect->>",inCorrect);
     const radioStyle = {
       display: 'block',
