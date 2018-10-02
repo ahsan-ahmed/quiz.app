@@ -1,0 +1,18 @@
+.mainSignUpForm{
+  display: flex; 
+}
+.headerOne{
+  display: flex;
+ }
+.headerTwo{
+  
+}
+.SignUpForm{
+  flex: 5;
+  padding:30px;
+}
+.travelForwardButton{
+  position: absolute;
+  bottom:0;
+  right: 0;
+}

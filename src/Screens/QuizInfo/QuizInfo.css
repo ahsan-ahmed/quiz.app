@@ -1,0 +1,8 @@
+.travelForwardButton{
+    position: fixed;
+    bottom:0;
+    right: 0;
+  }
+  .innerBlock{
+    margin-bottom: 80px;
+  }
